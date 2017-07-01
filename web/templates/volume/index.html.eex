@@ -1,0 +1,26 @@
+<h3><%= @target %></h3>
+
+<table border="1">
+  <tr>
+    <th>順位</th>
+    <th>コード</th>
+    <th>市場</th>
+    <th>銘柄</th>
+    <th>株価</th>
+    <th>出来高</th>
+    <th>出来高平均</th>
+    <th>出来高増加率</th>
+  </tr>
+  <%= for item <- @items do %>
+  <tr>
+    <td><%= item.ranking %></td>
+    <td><%= item.code %></td>
+    <td><%= item.market %></td>
+    <td><%= item.name %></td>
+    <td><%= item.price %></td>
+    <td><%= item.volume %></td>
+    <td><%= item.volume_average %></td>
+    <td><%= item.volume_rate %></td>
+  </tr>
+  <% end %>
+</table>

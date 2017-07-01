@@ -1,0 +1,14 @@
+<h3><%= @target.year %>-<%= @target.month %></h3>
+<div>
+  <a href="<%= home_path(@conn, :index, year: integer_to_string(@prev.year), month: integer_to_string(@prev.month)) %>"><%= @prev.year %>-<%= @prev.month %></a>
+</div>
+<div>
+  <a href="<%= home_path(@conn, :index, year: integer_to_string(@next.year), month: integer_to_string(@next.month)) %>"><%= @next.year %>-<%= @next.month %></a>
+</div>
+<ul>
+  <%= for item <- @items do %>
+    <li>
+      <a href="<%= volume_path(@conn, :index, date_to_string(item.date)) %>"><%= item.date %></a>
+    </li>
+  <% end %>
+</ul>
